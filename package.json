@@ -2,6 +2,7 @@
   "name": "appreg",
   "version": "1.0.0",
   "description": "Just something to manage which App Regsitrations are in use",
+  "repository":"git@github.com:vincepower/function-appreg.git",
   "scripts": {
     "test": "echo \"No tests yet...\""
   },
