@@ -10,7 +10,7 @@ module.exports = async function (context) {
             body: projecttag+" not assigned"
         };
     } else {
-        context.bindings.appreglistout = appreglist[0];
+        context.bindings.appreglistout = appreglistin[0];
         context.bindings.appreglistout.used = false;
         context.bindings.appreglistout.projecttag = null;
 
