@@ -1,23 +1,22 @@
 module.exports = async function (context) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    var appreglistin = context.binding.appreglistin;
+    var projecttag = context.bindingData.projecttag;
+    var appreglistin = context.bindings.appreglistin;
 
     if (appreglistin.length == 0) {
         context.res = {
             status: 400,
-            body: "Please pass a GUID used by ARO in the URL"
+            body: projecttag+" not assigned"
         };
-    }
-    else {
-
-        context.bindings.appreglistout = appreglistin[0];
+    } else {
+        context.bindings.appreglistout = appreglist[0];
         context.bindings.appreglistout.used = false;
         context.bindings.appreglistout.projecttag = null;
 
         context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: appreglistin[0].id + " has been freed"
+            status: 200,
+            body: projecttag+" has been released"
         };
     }
 
