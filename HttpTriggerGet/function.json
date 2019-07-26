@@ -18,7 +18,7 @@
       "partitionKey": "/aroreg",
       "connectionStringSetting": "appreglist_DOCUMENTDB",
       "direction": "in",
-      "sqlQuery": "SELECT * FROM c WHERE c.used = false ORDER BY c._ts ASC"
+      "sqlQuery": "SELECT * FROM c WHERE c.used = false OR (c.used=true AND c.projecttag={projecttag}) ORDER BY c.used DESC"
     },
     {
       "type": "http",

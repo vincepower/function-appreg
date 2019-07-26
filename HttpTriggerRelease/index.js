@@ -16,7 +16,7 @@ module.exports = async function (context) {
 
         context.res = {
             status: 200,
-            body: projecttag+" has been released"
+            body: "AppReg ObjectID "+appreglistin[0].id+" for instance "+projecttag+" has been released.\n"
         };
     }
 
