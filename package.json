@@ -1,0 +1,19 @@
+{
+  "name": "appreg",
+  "version": "1.0.0",
+  "description": "Just something to manage which App Regsitrations are in use",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "license": "MIT",
+  "author": "Vince Power <vpower@redhat.com>",
+  "dependencies": {
+    "azure-function-express": "^2.0.0",
+    "dotenv": "^8.0.0"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "^2.7.1480",
+    "body-parser": "^1.19.0",
+    "eslint": "^6.1.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route":"release/{projecttag}"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "appreglistin",
+      "databaseName": "aro",
+      "collectionName": "lists",
+      "partitionKey": "/aroreg",
+      "connectionStringSetting": "appreglist_DOCUMENTDB",
+      "direction": "in",
+      "sqlQuery": "SELECT * FROM c WHERE c.used = true AND c.projecttag = {projecttag}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "name": "appreglistout",
+      "databaseName": "aro",
+      "collectionName": "lists",
+      "partitionKey": "/aroreg",
+      "connectionStringSetting": "appreglist_DOCUMENTDB",
+      "direction": "out"
+    }
+  ]
+}
