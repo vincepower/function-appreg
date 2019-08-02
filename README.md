@@ -40,3 +40,40 @@ AppReg ObjectID aroreg01 for instance GUID has been released.
 $
 ```
 
+# Adding all the application registrations
+
+Create 100 app registrations by making the following two files in the same directory, be logged into the Azure CLI, and then run ./loop.sh
+
+
+###rra.json
+```
+[{
+  "resourceAppId": "00000002-0000-0000-c000-000000000000",
+  "resourceAccess": [
+    {
+      "id": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
+      "type": "Scope"
+    },
+    {
+      "id": "5778995a-e1bf-45b8-affa-663a9f3f4d04",
+      "type": "Role"
+    }
+  ]
+}]
+```
+
+###loop.sh
+```
+#!/usr/local/bin/bash
+  
+for x in 0 1 2 3 4 5 6 7 8 9
+do
+  for y in 0 1 2 3 4 5 6 7 8 9
+  do
+    ARNAME=aroreg$x$y
+    echo -n "\"$ARNAME\","
+    #az ad app create --display-name $ARNAME --required-resource-accesses @rra.json \
+    #    --identifier-uris https://$ARNAME --homepage https://$ARNAME --query 'appId'
+  done
+done
+```
