@@ -42,8 +42,9 @@ $
 
 # Adding all the application registrations
 
-Create 100 app registrations by making the following two files in the same directory, be logged into the Azure CLI, and then run ./loop.sh
+Create 100 app registrations with the directory.read.all permission by making the following two files in the same directory, be logged into the Azure CLI, and then run ./loop.sh
 
+You still need to log into the Azure Portal afterwards and manually "Approve" each app registration because of how Azure's security works in the Graph API.
 
 ###rra.json
 ```
