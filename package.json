@@ -16,7 +16,7 @@
     "azure-arm-resource": "^2.0.0-preview",
     "bluebird": "^3.4.6",
     "jsonpath": "^0.2.11",
-    "lodash": "^4.16.6",
+    "lodash": "^4.17.19",
     "request": "2.81.0"
   },
   "devDependencies": {
